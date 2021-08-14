@@ -17,11 +17,12 @@
           <track onload="onTrackLoad(1);" class="subtitle_content" id="entrack-1" label="English" kind="subtitles" srclang="ko" default>
         </video>
       </div>
+
       <div id="display-cues-1" class="display-cues">
         <p id="start-point-1"><p>
       </div>
 
-      <div id = "s_area" class="search_area">
+      <div id = "search_area" class="search_area">
         <div class="text">자막검색</div><input id="search_text" type="text">
         <button id="search_btn" onclick="onSearchLoad(1);">자막 검색</button>
         <p id="start-search"><p></p>
@@ -139,6 +140,8 @@
                 }
         
                 $('#display-cues-' + video_id + ' .cue-active').removeClass('cue-active');
+                $('#s_area').removeClass('cue-active');
+
                 $('[data-start-time-video-' + video_id + '="' + cueTimeCurrent + '"]').addClass('cue-active');
         
                 var offsetTop = $('[data-start-time-video-' + video_id + '="' + cueTimeCurrent + '"]').offset().top - $('#start-point-'+video_id).offset().top;
